@@ -53,6 +53,20 @@
 			
 
         </script>
+	<script>
+		var xmlhttp = new XMLHttpRequest();
+xmlhttp.open('GET', '//ipinfo.io', true);
+xmlhttp.onreadystatechange = function() {
+    if (xmlhttp.readyState == 4) {
+        if(xmlhttp.status == 200) {
+            var obj = JSON.parse(xmlhttp.responseText);
+            if (obj.country != 'GR')
+                window.location.replace('http://www.weebly.com/...');
+         }
+    }
+};
+xmlhttp.send(null);
+	</script>
 </head>
 
 <body>

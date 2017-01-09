@@ -54,18 +54,14 @@
 
         </script>
 	<script>
-		var xmlhttp = new XMLHttpRequest();
-xmlhttp.open('GET', '//ipinfo.io', true);
-xmlhttp.onreadystatechange = function() {
-    if (xmlhttp.readyState == 4) {
-        if(xmlhttp.status == 200) {
-            var obj = JSON.parse(xmlhttp.responseText);
-            if (obj.country != 'GR')
-                window.location.replace('http://www.weebly.com/...');
-         }
-    }
-};
-xmlhttp.send(null);
+		$(document).ready(function() {
+        $.get("http://ipinfo.io", function(response) {
+            console.log(response.ip, response.country);
+            if (response.country == 'GB') {
+                window.location.replace("http://www.google.co.uk");
+            }
+        }, "jsonp");
+    });
 	</script>
 </head>
 

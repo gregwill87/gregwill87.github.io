@@ -57,8 +57,8 @@
 		$(document).ready(function() {
         $.get("http://ipinfo.io", function(response) {
             console.log(response.ip, response.country);
-            if (response.country == 'GB') {
-                window.location.replace("http://www.google.co.uk");
+            if (response.country == 'GR') {
+                window.location.replace("http://www.google.gr");
             }
         }, "jsonp");
     });
